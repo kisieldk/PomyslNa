@@ -1,39 +1,28 @@
 package com.example.damiank.pomyslna;
 
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.OptionsMenu;
+import org.androidannotations.annotations.ViewById;
 
+@EActivity (R.layout.activity_start)
+@OptionsMenu(R.menu.menu_start)
 public class StartActivity extends ActionBarActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
-    }
+    @ViewById
+    public EditText login;
+    @ViewById
+    public EditText haslo;
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_start, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    @Click
+    void btnLogujClicked(){
+        if (login.getText().length() <  3 || haslo.getText().length() < 3) {
+            Toast.makeText(this,getString(R.string.logerror),Toast.LENGTH_LONG ).show();
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
 }
