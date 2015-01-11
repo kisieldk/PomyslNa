@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.damiank.pomyslna.AddActivity_"/>
+        <activity android:name="com.example.damiank.pomyslna.MenuActivity_"/>
+        <activity android:name="com.example.damiank.pomyslna.MyRecActivity_"/>
+        <activity android:name="com.example.damiank.pomyslna.OtherRecActivity_"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

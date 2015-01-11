@@ -22,7 +22,13 @@ public class StartActivity extends ActionBarActivity {
     void btnLogujClicked(){
         if (login.getText().length() <  3 || haslo.getText().length() < 3) {
             Toast.makeText(this,getString(R.string.logerror),Toast.LENGTH_LONG ).show();
-        }
-    }
 
+        }
+        goToMenuActivity();
+
+    }
+    public void goToMenuActivity(){
+
+        MenuActivity_.intent(this).start();
+    }
 }
