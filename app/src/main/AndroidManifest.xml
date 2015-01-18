@@ -21,6 +21,7 @@
         <activity android:name="com.example.damiank.pomyslna.MyRecActivity_"/>
         <activity android:name="com.example.damiank.pomyslna.OtherRecActivity_"/>
         <activity android:name="com.example.damiank.pomyslna.LoginActivity_"/>
+        <activity android:name="com.example.damiank.pomyslna.OpisActivity_"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
