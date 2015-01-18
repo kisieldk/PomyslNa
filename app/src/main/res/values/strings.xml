@@ -12,6 +12,10 @@
     <string name="ulRec">Ulubione</string>
     <string name="pass">hasło</string>
     <string name="loguj">Zaloguj</string>
+    <string name="dodaj">Dodaj przepis</string>
+    <string name="ulubione">Ulubione</string>
+    <string name="usun">Usuń</string>
+    <string name="przepisy">Czytaj przepisy</string>
     <string name="action_settings">Settings</string>
     <string name="logerror">Wprowadzono za krótki login lub hasło</string>
 </resources>
