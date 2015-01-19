@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.damiank.pomyslna.AddActivity_"/>
-        <activity android:name="com.example.damiank.pomyslna.MenuActivity_"/>
+        <activity android:name="com.example.damiank.pomyslna.UlubioneActivity_"/>
         <activity android:name="com.example.damiank.pomyslna.MyRecActivity_"/>
         <activity android:name="com.example.damiank.pomyslna.OtherRecActivity_"/>
         <activity android:name="com.example.damiank.pomyslna.LoginActivity_"/>
