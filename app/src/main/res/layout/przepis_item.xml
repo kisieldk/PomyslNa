@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip"
+    >
+
+    <ImageView
+        android:id="@+id/logoEmpty"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="10dip"
+        android:scaleType="centerInside"
+        />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/logoEmpty"
+        android:text="Frytki"
+        android:textSize="20sp"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/czasGotowania"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/logoEmpty"
+        android:layout_below="@id/name"
+        android:text="Czas gotowania 2h"
+        android:textSize="16sp"
+        android:layout_marginLeft="50dp"
+        />
+    <TextView
+        android:id="@+id/servs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/name"
+        android:text="Danie dla 2 osob"
+        android:textSize="16sp"
+        android:layout_marginLeft="22dp"
+        android:layout_toRightOf="@id/logoEmpty"
+        />
+    <ImageView
+        android:id="@+id/people"
+        android:layout_width="16sp"
+        android:layout_height="20sp"
+        android:src="@drawable/person"
+        android:scaleType="centerInside"
+        android:layout_toRightOf="@id/logoEmpty"
+        android:layout_below="@id/name"
+        android:layout_marginLeft="5dp"
+        />
+    <TextView
+        android:id="@+id/created"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoEmpty"
+        android:text="465456"
+        android:textSize="7sp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="2dp"
+        android:visibility="invisible"
+
+        />
+
+</RelativeLayout>

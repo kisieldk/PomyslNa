@@ -1,0 +1,93 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scrollbarStyle="insideInset">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    >
+<TextView
+    android:id="@+id/powitanie"
+    android:text="@string/hello_msg"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/title"
+        android:layout_below="@id/powitanie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        android:hint="*nazwa potrawy"/>
+    <EditText
+        android:id="@+id/introduction"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="15dp"
+        android:hint="krótki opis dania"/>
+
+    <EditText
+        android:id="@+id/ingredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
+        android:layout_below="@id/introduction"
+        android:layout_marginTop="15dp"
+        android:hint="*składniki"/>
+
+    <EditText
+        android:id="@+id/steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/ingredients"
+        android:hint="*sposób przygotowania"/>
+    <EditText
+        android:id="@+id/servings"
+        android:layout_below="@id/steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginTop="15dp"
+        android:hint="*ilość porcji np: 1"/>
+    <EditText
+        android:id="@+id/cooktime"
+        android:layout_below="@id/servings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginTop="15dp"
+        android:hint="czas gotowania w min np: 60"/>
+    <EditText
+        android:id="@+id/preparetime"
+        android:layout_below="@id/cooktime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="czas przygotowania w min np: 15"
+        android:layout_marginTop="15dp"/>
+    <Button
+    android:id="@+id/btnDodaj"
+    android:layout_below="@+id/preparetime"
+    android:layout_marginTop="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/addRec"
+    android:background="#009999"/>
+</RelativeLayout>
+</ScrollView>
