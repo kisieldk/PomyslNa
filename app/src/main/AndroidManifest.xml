@@ -23,6 +23,7 @@
         <activity android:name="com.example.damiank.pomyslna.LoginActivity_"/>
         <activity android:name="com.example.damiank.pomyslna.OpisActivity_"/>
         <activity android:name="com.example.damiank.pomyslna.RegisterActivity_"/>
+        <activity android:name="com.example.damiank.pomyslna.ReadCommentActivity_"/>
         
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

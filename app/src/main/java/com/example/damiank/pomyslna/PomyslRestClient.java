@@ -3,6 +3,7 @@ package com.example.damiank.pomyslna;
 import android.graphics.Picture;
 
 import com.example.damiank.pomyslna.data.Account;
+import com.example.damiank.pomyslna.data.Comment;
 import com.example.damiank.pomyslna.data.CookBook;
 import com.example.damiank.pomyslna.data.EmailAndPassword;
 import com.example.damiank.pomyslna.data.Komentarz;
@@ -54,5 +55,7 @@ public interface PomyslRestClient extends RestClientHeaders{
     @Post("/db/comments")
     void addComment(Komentarz komentarz);
 
+    @Get("/db/comments?filter={path}")
+    Comment getComment(String path);
     //Picture getPictureById(int id);
 }

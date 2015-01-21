@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.example.damiank.pomyslna.data.Comment;
 import com.example.damiank.pomyslna.data.CookBook;
 import com.example.damiank.pomyslna.data.MyRecipe;
 import com.example.damiank.pomyslna.data.Recipe;
@@ -71,4 +72,5 @@ public class RecipeListAdapter extends BaseAdapter {
         recipe.addAll(myRecipe.records);
         notifyDataSetChanged();
     }
+
 }

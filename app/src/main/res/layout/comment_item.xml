@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dip"
+    >
+
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Frytki"
+        android:textSize="20sp"
+        android:singleLine="false"
+        android:maxLines="10"
+        android:layout_marginLeft="1dp"
+        />
+
+    <TextView
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:text="Czas gotowania 2h"
+        android:singleLine="false"
+        android:textSize="12sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/ownerId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:text="kto dodal"
+        android:textSize="12sp"
+        android:singleLine="false"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>

@@ -164,10 +164,32 @@
     <Button
         android:id="@+id/btnComment"
         android:layout_below="@+id/coment"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dodaj"
         android:background="#009999"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+       android:layout_marginLeft="10dp"/>
+
+    <Button
+        android:id="@+id/btnRead"
+        android:layout_below="@+id/coment"
+        android:layout_toRightOf="@+id/btnComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Czytaj"
+        android:background="#009999"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"/>
+    <Button
+        android:id="@+id/btnLike"
+        android:layout_below="@+id/coment"
+        android:layout_toRightOf="@+id/btnRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Polub przepis"
+        android:background="#009999"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"/>
 </RelativeLayout>
 </ScrollView>

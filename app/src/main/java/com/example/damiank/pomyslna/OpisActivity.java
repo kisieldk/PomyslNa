@@ -1,5 +1,6 @@
 package com.example.damiank.pomyslna;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.EditText;
@@ -25,7 +26,7 @@ import org.androidannotations.annotations.ViewById;
 
 @EActivity (R.layout.activity_opis)
 @OptionsMenu(R.menu.menu_start)
-public class OpisActivity extends ActionBarActivity {
+public class OpisActivity extends Activity {
 
 
     @Extra
@@ -114,6 +115,12 @@ public class OpisActivity extends ActionBarActivity {
 
     }
 
+     @Click
+     void btnReadClicked(){
+         Recipe recipe;
+         recipe = item;
+         ReadCommentActivity_.intent(this).extra("recipe",recipe).start();
+     }
 
 
     public void showError(Exception e) {

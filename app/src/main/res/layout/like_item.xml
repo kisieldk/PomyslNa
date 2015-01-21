@@ -5,6 +5,7 @@
     android:padding="6dip"
     >
 
+
     <ImageView
         android:id="@+id/logoEmpty"
         android:layout_width="50dp"
