@@ -46,7 +46,7 @@ public class LoginActivity extends Activity {
 
     @AfterViews
     void init() {
-        Toast.makeText(this, recipe.title, Toast.LENGTH_LONG).show();
+
         ringProgressDialog = new ProgressDialog(this);
         ringProgressDialog.setMessage("Loading...");
         ringProgressDialog.setIndeterminate(true);
@@ -78,11 +78,14 @@ public class LoginActivity extends Activity {
         item = recipe;
         try {
             if (item.id > 0) {
+                finish();
                 OpisActivity_.intent(this).extra("user", user).extra("item", item).start();
             }
         }
         catch (Exception e){
+            finish();
             StartActivity_.intent(this).user(user).start();
+
         }
     }
 

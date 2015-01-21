@@ -14,6 +14,8 @@ import org.androidannotations.annotations.rest.RestService;
 
 @EBean
 public class RestLoginBackgroundTask {
+ public static Integer zmiena = 3;
+    int i  = 0;
 
     @RootContext
     LoginActivity activity;
@@ -21,14 +23,24 @@ public class RestLoginBackgroundTask {
     @RestService
     PomyslRestClient restClient;
 
+
+
     @Background
     void login(EmailAndPassword emailAndPassword) {
+
         try {
             restClient.setHeader("X-Dreamfactory-Application-Name", "phonebook");
             User user = restClient.login(emailAndPassword);
             publishResult(user);
         } catch (Exception e) {
-            publishError(e);
+            i++;
+
+            if(i<=zmiena){
+                login(emailAndPassword);
+            }
+            else{
+                publishError(e);
+            }
         }
     }
 

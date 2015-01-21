@@ -110,7 +110,7 @@ public class OpisActivity extends ActionBarActivity {
             recipe = item;
 
             LoginActivity_.intent(this).extra("recipe",recipe).start();
-           }
+        }
 
     }
 

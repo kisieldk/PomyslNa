@@ -22,6 +22,8 @@ import org.androidannotations.annotations.rest.RestService;
 
 @EBean
 public class RestBackgroundTask {
+    public static Integer zmiena = 3;
+    Integer i = 0;
     @RootContext
     OtherRecActivity activity;
     @RootContext
@@ -106,13 +108,20 @@ public class RestBackgroundTask {
     }
     @Background
     void addComment(Komentarz komentarz, String sessionId){
-        restClient.setHeader("X-Dreamfactory-Session-Token", sessionId);
         restClient.setHeader("X-Dreamfactory-Application-Name", "cookbook");
+        restClient.setHeader("X-Dreamfactory-Session-Token", sessionId);
+
         try {
             restClient.addComment(komentarz);
 
-        }catch (NullPointerException e){
-            publishError(e);
+        }catch (Exception e){
+           i++;
+                   if(i<=zmiena){
+                       addComment(komentarz,sessionId);
+                   }
+            else {
+                     publishError(e);
+                   }
         }
     }
 
