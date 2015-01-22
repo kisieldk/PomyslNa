@@ -1,5 +1,6 @@
 package com.example.damiank.pomyslna;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -25,7 +26,7 @@ import org.androidannotations.annotations.ViewById;
 
 @EActivity (R.layout.activity_my)
 @OptionsMenu(R.menu.menu_start)
-public class MyRecActivity extends ActionBarActivity {
+public class MyRecActivity extends Activity {
 
     @Extra
     User user;
@@ -98,9 +99,9 @@ public void deletRec(Recipe item){
             showError(e);
 
         }
-        Toast.makeText(this, "Usunięto" + item.title, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Usunięto" + " " + item.title, Toast.LENGTH_LONG).show();
         StartActivity_.intent(this).start();
-
+    finish();
     }
     public void updateMyRecipe(MyRecipe myRecipe) {
         ringProgressDialog.dismiss();

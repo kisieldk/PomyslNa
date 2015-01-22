@@ -12,6 +12,7 @@ import com.example.damiank.pomyslna.adapter.RecipeListAdapter;
 import com.example.damiank.pomyslna.data.CookBook;
 import com.example.damiank.pomyslna.data.Komentarz;
 import com.example.damiank.pomyslna.data.Recipe;
+import com.example.damiank.pomyslna.data.Ulubione;
 import com.example.damiank.pomyslna.data.User;
 
 import org.androidannotations.annotations.AfterViews;
@@ -56,8 +57,6 @@ public class OpisActivity extends Activity {
     @ViewById
     TextView howTo;
 
-    @ViewById
-    TextView who;
 
     @ViewById
     TextView servs;
@@ -65,6 +64,9 @@ public class OpisActivity extends Activity {
     @Bean
     @NonConfigurationInstance
     RestBackgroundTask restBackgroundTask;
+    @Bean
+    @NonConfigurationInstance
+    RestLikeBackgroundTask restLikeBackgroundTask;
 
     ProgressDialog ringProgressDialog;
     @AfterViews
@@ -81,7 +83,7 @@ public class OpisActivity extends Activity {
         skladniki.setText(item.ingredients);
         opis.setText(item.introduction);
         howTo.setText(item.steps);
-        who.setText("Przygotował " + String.valueOf(item.ownerId));
+
 
     }
 
@@ -111,6 +113,7 @@ public class OpisActivity extends Activity {
             recipe = item;
 
             LoginActivity_.intent(this).extra("recipe",recipe).start();
+            finish();
         }
 
     }
@@ -122,6 +125,31 @@ public class OpisActivity extends Activity {
          ReadCommentActivity_.intent(this).extra("recipe",recipe).start();
      }
 
+     @Click
+     void btnLikeClicked(){
+         try {
+             if (user.id > 0) {
+                 ringProgressDialog.show();
+                 Ulubione ulubione = new Ulubione();
+                 ulubione.recipeId= item.id;
+                 ulubione.ownerId =  user.id;
+
+                 restLikeBackgroundTask.addLike(ulubione, user.sessionId);
+                 ringProgressDialog.dismiss();
+                 Toast.makeText(this, "Dodałeś ten przepis do ulubionych", Toast.LENGTH_LONG).show();
+
+
+             }
+
+
+         } catch (Exception e){
+             Toast.makeText(this, "Aby dodaćdo ulubionych musisz być zalogowany", Toast.LENGTH_LONG).show();
+             Recipe recipe;
+             recipe = item;
+
+             LoginActivity_.intent(this).extra("recipe",recipe).start();
+         }
+     }
 
     public void showError(Exception e) {
         Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();

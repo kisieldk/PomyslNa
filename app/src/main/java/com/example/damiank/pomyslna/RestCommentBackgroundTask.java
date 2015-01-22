@@ -51,7 +51,7 @@ public class RestCommentBackgroundTask {
 
 
 
-   /* @Background
+    @Background
     void addComment(Komentarz komentarz, String sessionId){
         restClient.setHeader("X-Dreamfactory-Application-Name", "cookbook");
         restClient.setHeader("X-Dreamfactory-Session-Token", sessionId);
@@ -68,7 +68,7 @@ public class RestCommentBackgroundTask {
                      publishError(e);
                    }
         }
-    }*/
+    }
 
 
 

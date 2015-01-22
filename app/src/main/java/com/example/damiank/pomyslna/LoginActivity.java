@@ -85,7 +85,7 @@ public class LoginActivity extends Activity {
         catch (Exception e){
             finish();
             StartActivity_.intent(this).user(user).start();
-
+            finish();
         }
     }
 

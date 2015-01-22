@@ -1,5 +1,6 @@
 package com.example.damiank.pomyslna;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.ListView;
@@ -22,7 +23,7 @@ import org.androidannotations.annotations.ViewById;
 
 @EActivity (R.layout.activity_other)
 @OptionsMenu(R.menu.menu_start)
-public class OtherRecActivity extends ActionBarActivity {
+public class OtherRecActivity extends Activity {
 
 
     @ViewById

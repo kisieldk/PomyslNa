@@ -1,7 +1,14 @@
 package com.example.damiank.pomyslna.data;
 
-/**
- * Created by damiank on 2015-01-19.
- */
-public class Ulubione {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Ulubione implements Serializable {
+
+    public Integer id;
+    public Integer recipeId;
+    public Integer ownerId;
+
 }

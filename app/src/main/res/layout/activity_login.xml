@@ -20,7 +20,7 @@
     android:layout_height="wrap_content"
     android:singleLine="true"
     android:hint="@string/user"
-    android:inputType="textCapWords"
+    android:inputType="textEmailAddress"
     android:layout_marginTop="55dp"/>
 <EditText
     android:id="@+id/haslo"

@@ -7,14 +7,22 @@ import android.support.v7.app.ActionBarActivity;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.damiank.pomyslna.data.Like;
+import com.example.damiank.pomyslna.data.Recipe;
+import com.example.damiank.pomyslna.data.Ulubione;
 import com.example.damiank.pomyslna.data.User;
 
+import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.NonConfigurationInstance;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @EActivity (R.layout.activity_start)
 @OptionsMenu(R.menu.menu_start)
@@ -37,6 +45,7 @@ try {
 
         try {
             if (user.sessionId != null) {
+
                 UlubioneActivity_.intent(this).user(user).start();
             }
         } catch (NullPointerException e){

@@ -85,7 +85,7 @@ public class RegisterActivity extends Activity {
             Toast.makeText(this, "Zarejestrowano", Toast.LENGTH_LONG).show();
             ringProgressDialog.dismiss();
             StartActivity_.intent(this).start();
-
+            finish();
 
         } else {
             Toast.makeText(this, "Prosze wypełnić wszystkie pola", Toast.LENGTH_LONG).show();

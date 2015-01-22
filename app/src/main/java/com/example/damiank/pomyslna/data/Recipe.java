@@ -24,4 +24,5 @@ public class Recipe implements Serializable{
 
     @JsonIgnore
     public String pictureBytes;
+
 }

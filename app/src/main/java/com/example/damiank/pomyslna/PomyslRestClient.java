@@ -7,8 +7,12 @@ import com.example.damiank.pomyslna.data.Comment;
 import com.example.damiank.pomyslna.data.CookBook;
 import com.example.damiank.pomyslna.data.EmailAndPassword;
 import com.example.damiank.pomyslna.data.Komentarz;
+import com.example.damiank.pomyslna.data.Like;
+import com.example.damiank.pomyslna.data.Lubie;
 import com.example.damiank.pomyslna.data.MyRecipe;
+import com.example.damiank.pomyslna.data.Pictures;
 import com.example.damiank.pomyslna.data.Recipe;
+import com.example.damiank.pomyslna.data.Ulubione;
 import com.example.damiank.pomyslna.data.User;
 
 import org.androidannotations.annotations.rest.Delete;
@@ -36,8 +40,6 @@ public interface PomyslRestClient extends RestClientHeaders{
 
     @Delete("/db/recipes/{id}")
    void deleteRecipe(Integer id);
-   // @Get("/db/recipes/{id}")
-   // Recipe getRecipeById(int id);
 
     @Post("/db/recipes")
     void addCookBookEntry(Recipe recipe);
@@ -49,13 +51,23 @@ public interface PomyslRestClient extends RestClientHeaders{
     @Post("/user/register/?login=true")
     Account createUser(Account account);
 
-   // @Get("/db/comments")
-   // Komentarz getKomentarze();
+
 
     @Post("/db/comments")
     void addComment(Komentarz komentarz);
 
     @Get("/db/comments?filter={path}")
     Comment getComment(String path);
-    //Picture getPictureById(int id);
+
+   //@Get("/db/pictures/{id}")
+   //Pictures getPictureById(int id);
+
+    @Get("/db/likes?filter={path}")
+    Like getLikeBook(String path);
+
+    @Get("/db/recipes/{id}")
+    Lubie getMyLike(Integer id);
+
+    @Post("/db/likes")
+    void addLike(Ulubione ulubione);
 }

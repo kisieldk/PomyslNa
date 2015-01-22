@@ -13,6 +13,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginRight="10dip"
         android:scaleType="centerInside"
+        android:src="@drawable/food"
         />
 
     <TextView

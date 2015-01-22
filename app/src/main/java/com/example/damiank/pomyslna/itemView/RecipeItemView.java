@@ -38,15 +38,16 @@ public class RecipeItemView extends  RelativeLayout{
     }
 
     public void bind(Recipe recipe) {
+       
         created.setText(recipe.created);
         name.setText(recipe.title);
         czasGotowania.setText("Czas gotowania: " + String.valueOf(recipe.cookingMinutes));
         servs.setText("x " + String.valueOf(recipe.servings));
-        if (recipe.pictureBytes != null) {
+       /* if (recipe.pictureBytes != null) {
             decodeAndSetImage(recipe.pictureBytes, logoEmpty);
         } else {
             logoEmpty.setImageDrawable(null);
-        }
+        }*/
     }
 
    private void decodeAndSetImage(String base64bytes, ImageView image) {

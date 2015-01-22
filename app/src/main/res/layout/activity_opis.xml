@@ -31,6 +31,7 @@
         android:text="Frytki"
         android:textSize="30sp"
         android:layout_marginLeft="5dp"
+        android:singleLine="false"
         />
 
     <TextView
@@ -95,8 +96,9 @@
         android:layout_below="@id/sklatxt"
         android:text="1 x marchewka"
         android:textSize="20sp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:singleLine="false"
         />
     <TextView
         android:id="@+id/opistxt"
@@ -118,7 +120,8 @@
         android:text="blblbsfbldfs bsbd"
         android:textSize="20sp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
+        android:singleLine="false"
         />
     <TextView
         android:id="@+id/howTotxt"
@@ -140,22 +143,13 @@
         android:text="1x fjbfjb"
         android:textSize="20sp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
+        android:singleLine="false"
         />
-    <TextView
-        android:id="@+id/who"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/howTo"
-        android:text="Dodał: Fernando Pereo"
-        android:textSize="20sp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="10dp"
-        />
+
     <EditText
         android:id="@+id/coment"
-        android:layout_below="@+id/who"
+        android:layout_below="@+id/howTo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Dodaj komentarz"

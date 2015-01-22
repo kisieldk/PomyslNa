@@ -38,11 +38,11 @@ public class RestBackgroundTask {
             restClient.setHeader("X-Dreamfactory-Application-Name", "cookbook");
             CookBook cookBook = restClient.getCookBook();
             /*for (Recipe recipe: cookBook.records) {
-                if (recipe.pictureId != null) {
+                if (recipe.picture1Id != null) {
 
-                   // Pictures pictures = restClient.getPictureById(recipe.pictureId);
-                   // recipe.pictureBytes = pictures.base64bytes;
-                }
+                   Pictures pictures = restClient.getPictureById(recipe.picture1Id);
+                    recipe.pictureBytes = pictures.base64bytes;
+
             }*/
             publishResult(cookBook);
         } catch (Exception e) {
@@ -56,11 +56,11 @@ public class RestBackgroundTask {
         try {
             restClient.setHeader("X-Dreamfactory-Application-Name", "cookbook");
             MyRecipe myRecipe = restClient.getMyCookBook(ownerId);
-            /*for (Recipe recipe: cookBook.records) {
-                if (recipe.pictureId != null) {
+           /* for (Recipe recipe: myRecipe.records) {
+                if (recipe.picture1Id != null) {
 
-                   // Pictures pictures = restClient.getPictureById(recipe.pictureId);
-                   // recipe.pictureBytes = pictures.base64bytes;
+                    Pictures pictures = restClient.getPictureById(recipe.picture1Id);
+                    recipe.pictureBytes = pictures.base64bytes;
                 }
             }*/
             publishResult1(myRecipe);
@@ -78,8 +78,15 @@ public class RestBackgroundTask {
             restClient.addCookBookEntry(recipe);
           // CookBook cookBook = restClient.getCookBook();
           // publishResult(cookBook);
-        } catch (NullPointerException e) {
-            publishError(e);
+        } catch (Exception e) {
+            i++;
+            if(i<=zmiena){
+                addCookBookEntry(recipe,sessionId);
+            }
+            else {
+                publishError(e);
+            }
+
         }
     }
 

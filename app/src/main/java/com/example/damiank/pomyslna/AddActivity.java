@@ -1,5 +1,6 @@
 package com.example.damiank.pomyslna;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.EditText;
@@ -19,7 +20,7 @@ import org.androidannotations.annotations.ViewById;
 
 @EActivity (R.layout.activity_add)
 @OptionsMenu(R.menu.menu_start)
-public class AddActivity extends ActionBarActivity {
+public class AddActivity extends Activity {
     @Extra
     User user;
 
@@ -66,26 +67,45 @@ public class AddActivity extends ActionBarActivity {
         recipe.ingredients = ingredients.getText().toString();
         recipe.introduction = introduction.getText().toString();
         recipe.steps = steps.getText().toString();
-        recipe.cookingMinutes = Integer.parseInt(cooktime.getText().toString());
-        recipe.preparationMinutes = Integer.parseInt(preparetime.getText().toString());
-        recipe.servings = Integer.parseInt(servings.getText().toString());
-        recipe.ownerId = user.id;
+        try {
 
-        if (title.getText().length() <  3 || ingredients.getText().length() < 3
-                || steps.getText().length() < 3 || servings.getText() == null){
-            Toast.makeText(this,"Prosze wypełnić obowiązkowe pola oznaczone *",Toast.LENGTH_LONG ).show();
 
+            recipe.cookingMinutes = Integer.parseInt(cooktime.getText().toString());
+            recipe.preparationMinutes = Integer.parseInt(preparetime.getText().toString());
+            recipe.servings = Integer.parseInt(servings.getText().toString());
+            recipe.ownerId = user.id;
         }
+        catch (NumberFormatException e){
+            Toast.makeText(this, "Prosze wypełnić wszystkie pola", Toast.LENGTH_LONG).show();
+        }
+         try {
+             if (title.getText().length() > 3 && ingredients.getText().length() > 3
+                     && steps.getText().length() > 3 && Integer.parseInt(servings.getText().toString()) > 0) {
+                 try {
+                     restBackgroundTask.addCookBookEntry(recipe, user.sessionId);
+                 } catch (NullPointerException e) {
+                     showError(e);
+
+                 }
+                 Toast.makeText(this, "dodano przepis", Toast.LENGTH_LONG).show();
+                 StartActivity_.intent(this).start();
+                 finish();
+
+             } else {
+                 Toast.makeText(this, "Prosze wypełnić obowiązkowe pola oznaczone *", Toast.LENGTH_LONG).show();
+             }
+         }
+         catch (NumberFormatException e)
+         {
+
+         }
+
+         catch (NullPointerException e)
+         {
+             Toast.makeText(this, "Prosze wypełnić obowiązkowe pola oznaczone *", Toast.LENGTH_LONG).show();
+         }
 
 
-           try {
-               restBackgroundTask.addCookBookEntry(recipe, user.sessionId);
-           } catch (NullPointerException e) {
-               showError(e);
-
-           }
-        Toast.makeText(this, "dodano przepis", Toast.LENGTH_LONG).show();
-        StartActivity_.intent(this).start();
         }
 
 
