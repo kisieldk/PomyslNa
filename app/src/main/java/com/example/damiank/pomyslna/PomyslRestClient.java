@@ -66,7 +66,7 @@ public interface PomyslRestClient extends RestClientHeaders{
     Like getLikeBook(String path);
 
     @Get("/db/recipes/{id}")
-    Lubie getMyLike(Integer id);
+    Recipe getMyLike(Integer id);
 
     @Post("/db/likes")
     void addLike(Ulubione ulubione);

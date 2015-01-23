@@ -1,20 +1,15 @@
 package com.example.damiank.pomyslna.adapter;
 
-import android.widget.BaseAdapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.example.damiank.pomyslna.data.Comment;
 import com.example.damiank.pomyslna.data.CookBook;
-import com.example.damiank.pomyslna.data.Lubie;
 import com.example.damiank.pomyslna.data.MyRecipe;
 import com.example.damiank.pomyslna.data.Recipe;
 import com.example.damiank.pomyslna.itemView.RecipeItemView;
 import com.example.damiank.pomyslna.itemView.RecipeItemView_;
-
-
 
 import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.RootContext;
@@ -28,19 +23,19 @@ public class RecipeListAdapter extends BaseAdapter {
     @RootContext
     Context context;
 
-    List<Recipe> recipe = new ArrayList<Recipe>();
+    List<Recipe> recipeL = new ArrayList<Recipe>();
 
     public RecipeListAdapter() {
     }
 
     @Override
     public int getCount() {
-        return recipe.size();
+        return recipeL.size();
     }
 
     @Override
     public Recipe getItem(int i) {
-        return recipe.get(i);
+        return recipeL.get(i);
     }
 
     @Override
@@ -64,18 +59,18 @@ public class RecipeListAdapter extends BaseAdapter {
     }
 
     public void update(CookBook cookBook) {
-        recipe.clear();
-        recipe.addAll(cookBook.records);
+        recipeL.clear();
+        recipeL.addAll(cookBook.records);
         notifyDataSetChanged();
     }
     public void update1(MyRecipe myRecipe) {
-        recipe.clear();
-        recipe.addAll(myRecipe.records);
+        recipeL.clear();
+        recipeL.addAll(myRecipe.records);
         notifyDataSetChanged();
     }
-    public void update2(Lubie lubie) {
-        recipe.clear();
-        recipe.addAll(lubie.records);
+    public void update2(Recipe recipe) {
+
+        recipeL.add(recipe);
         notifyDataSetChanged();
     }
 

@@ -10,5 +10,6 @@ public class Ulubione implements Serializable {
     public Integer id;
     public Integer recipeId;
     public Integer ownerId;
+    public  String created;
 
 }

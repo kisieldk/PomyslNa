@@ -6,7 +6,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.damiank.pomyslna.adapter.RecipeListAdapter;
-import com.example.damiank.pomyslna.data.Lubie;
 import com.example.damiank.pomyslna.data.Recipe;
 import com.example.damiank.pomyslna.data.User;
 
@@ -31,7 +30,7 @@ public class UlubioneActivity extends Activity {
     ListView list;
 
     @Bean
-    RecipeListAdapter adapter;
+   RecipeListAdapter adapter;
 
     @Bean
     @NonConfigurationInstance
@@ -54,16 +53,24 @@ public class UlubioneActivity extends Activity {
     }
     @ItemClick
     void listItemClicked(Recipe item) {
-        Toast.makeText(this, item.title, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, new Integer(item.id).toString(), Toast.LENGTH_LONG).show();
     }
     @Click
     void refreshClicked()    {
         ringProgressDialog.show();
         restLikeBackgroundTask.getLikeBook(user);
     }
-    public void updateLubie(Lubie lubie) {
+
+
+
+    public void updateLubie(Recipe recipe) {
+
         ringProgressDialog.dismiss();
-        adapter.update2(lubie);
+        adapter.update2(recipe);
+
+
+
+
     }
 
     public void showError(Exception e) {

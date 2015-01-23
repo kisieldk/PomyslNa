@@ -6,9 +6,11 @@ package com.example.damiank.pomyslna;
 import com.example.damiank.pomyslna.data.Account;
 import com.example.damiank.pomyslna.data.CookBook;
 import com.example.damiank.pomyslna.data.Komentarz;
+import com.example.damiank.pomyslna.data.Like;
 import com.example.damiank.pomyslna.data.MyRecipe;
 import com.example.damiank.pomyslna.data.Recipe;
 import com.example.damiank.pomyslna.data.Pictures;
+import com.example.damiank.pomyslna.data.Ulubione;
 import com.example.damiank.pomyslna.data.User;
 
 import org.androidannotations.annotations.Background;
@@ -28,6 +30,8 @@ public class RestBackgroundTask {
     OtherRecActivity activity;
     @RootContext
     MyRecActivity activity1;
+    @RootContext
+    UlubioneActivity activity2;
 
     @RestService
     PomyslRestClient restClient;
@@ -134,6 +138,7 @@ public class RestBackgroundTask {
 
 
 
+
     @UiThread
     void publishResult(CookBook cookBook) {
         try {
@@ -150,6 +155,7 @@ public class RestBackgroundTask {
             publishError(e);
         }
     }
+
 
     @UiThread
     void publishError(Exception e) {
